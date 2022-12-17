@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM</title>
+
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+    <section class="forms-section">
+        <h1 class="section-title">Welcome to my virtual ATM!</h1>
+        <div class="forms">
+            <div class="form-wrapper is-active">
+                <button type="button" class="switcher switcher-login">
+                    Add bank account
+                    <span class="underline"></span>
+                </button>
+                <form class="form form-login">
+                    <fieldset>
+                        <div class="input-block">
+                            <label for="balance">Balance</label>
+                            <input id="balance-input" type="text" name="balance">
+                            <span class="error"></span>
+                        </div>
+                        <div class="input-block">
+                            <label for="login-password">PIN</label>
+                            <input id="pin-input" type="password" name="pin">
+                            <span class="error"></span>
+                        </div>
+                        <button type="submit" class="btn-login">Save</button>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="form-wrapper">
+                <button type="button" class="switcher switcher-signup" disabled>
+                    Withdraw money
+                    <span class="underline"></span>
+                </button>
+                <form class="form form-signup">
+                    <fieldset>
+                        <div class="input-block">
+                            <label for="signup-password">Amount</label>
+                            <input id="amount-input" type="text" name="amount">
+                            <span class="error"></span>
+                        </div>
+                        <div class="input-block">
+                            <label for="signup-password">PIN</label>
+                            <input id="withdraw-pin-input" type="password" name="pin">
+                            <span class="error"></span>
+                        </div>
+                    </fieldset>
+                    <button type="submit" class="btn-signup">Continue</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section class="forms-section">
+        <div class="account-info" style="display: none; text-align: center;">
+            <h2 class="section-title">Bank Account Details</h2>
+            <h4 class="section-title current-balance-info"></h4>
+            <p class="withdraw-info"></p>
+            <h5 class="section-title">Withdraws History</h5>
+            <div class="table-wrapper">
+                <table class="fl-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Amount</th>
+                            <th>Fee</th>
+                            <th>Account balance</th>
+                        </tr>
+                    </thead>
+                    <tbody class="history-content">
+                    <tbody>
+                </table>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <script type="module" src="./js/main.js"></script>
+
+    <script type="module" src="./js/common/accountHelper.js"></script>
+    <script type="module" src="./js/common/balanceGetter.js"></script>
+    <script type="module" src="./js/common/elementsHelper.js"></script>
+    <script type="module" src="./js/common/errorHandler.js"></script>
+    <script type="module" src="./js/common/validator.js"></script>
+
+    <script type="module" src="./js/register/registerHandler.js"></script>
+
+    <script type="module" src="./js/withdraw/appLocker.js"></script>
+    <script type="module" src="./js/withdraw/calculator.js"></script>
+    <script type="module" src="./js/withdraw/dateGetter.js"></script>   
+    <script type="module" src="./js/withdraw/withdrawHandler.js"></script>
+    <script type="module" src="./js/withdraw/withdrawNotifier.js"></script>
+
+</body>
+
+</html>
